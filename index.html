@@ -1,0 +1,228 @@
+<div class="happy-valentines">
+  <div class="valentines-day-card">
+    <div class="clouds"></div>
+    <div class="hearts">
+      <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+      </div>
+      <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+      </div>
+      <div class="heartThree">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+      </div>
+      <div class="heartFour">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+      </div>
+      <div class="heartFive">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+      </div>
+    </div>
+    <div class="text">
+      <span id="love-message">Te quiero mucho milagros, más de lo que puedas imaginar 💖</span>
+    </div>
+  </div>
+  <p class="hover">- Yo sé que tú me amas y yo te amo -</p>
+</div>  
+
+<!-- Reproductor de audio con controles -->
+<div class="audio-player">
+  <audio id="audio" controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff758f;
+  }
+
+  .valentines-day-card {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-color: #ff8fa3;
+    overflow: hidden;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .4);
+  }
+
+  .clouds {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff0f3;
+    z-index: 5;
+    top: 210px;
+    left: -20px;
+    box-shadow: 55px 30px #fff0f3, 125px 10px #fff0f3, 175px 20px #fff0f3, 250px 10px #fff0f3, 320px 5px #fff0f3, 380px 10px #fff0f3;
+  }
+
+  .hearts {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .heartOne {
+    position: absolute;
+    left: 100px;
+    top: 250px;
+    animation: up 4s linear forwards 1s;
+  }
+
+  .heartTwo {
+    position: absolute;
+    left: 270px;
+    top: 230px;
+    animation: up 5s linear forwards 1.8s;
+  }
+
+  .heartThree {
+    position: absolute;
+    left: 85px;
+    top: 415px;
+    animation: up 5s linear forwards 3s;
+  }
+
+  .heartFour {
+    position: absolute;
+    left: 320px;
+    top: 380px;
+    animation: upTwo 9s linear infinite 3.5s;
+  }
+
+  .heartFive {
+    position: absolute;
+    left: 150px;
+    top: 400px;
+    animation: upTwo 13s linear infinite 4.5s;
+  }
+
+  .text {
+    position: absolute;
+    color: #800f2f;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    line-height: 1;
+    text-align: center;
+    width: 380px;
+    left: 10px;
+    z-index: 3;
+    top: 240px;
+    animation: up 1s ease forwards;
+    transition: .2s;
+  }
+
+  .hover {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+  }
+
+  .text:hover span {
+    display: none;
+  }
+
+  .text:hover:before {
+    content: "Recuerda que eres la mejor, sin importar lo que te digan las personas o lo que pase. Te conozco realmente y me he enamorado de ti por la maravillosa persona que eres. Yo te amo con todo mi corazón.";
+    font-size: 20px;
+  }
+
+  /* Estilo para el reproductor de audio */
+  .audio-player {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* Animación de corazón y efectos */
+  @keyframes up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-200px);}
+  }
+
+  @keyframes upTwo {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-450px);}
+  }
+
+  /* Animación para cambiar las frases dinámicamente usando JS */
+  #love-message {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    color: #800f2f;
+    text-align: center;
+    animation: fadeInOut 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const messages = [
+    "Te quiero mucho milagros, más de lo que puedas imaginar 💖",
+    "Cada segundo que paso contigo me siento más afortunado/a.",
+    "Tu sonrisa ilumina mi vida, eres mi razón de ser.",
+    "Nunca cambies, eres perfecta tal y como eres.",
+    "Te amo con todo mi corazón, más de lo que las palabras pueden expresar.",
+    "Y siempre te amaré, ahora y siempre. 💕",
+    "Eres mi todo, y siempre estaré a tu lado.",
+    "Tus ojos reflejan mi felicidad, te adoro.",
+    "No hay nada que desee más que hacerte feliz cada día.",
+    "Te amo hoy, mañana y siempre. 💖",
+    "Gracias por ser tú, por ser mi razón de vivir."
+  ];
+
+  let index = 0;
+  const loveMessageElement = document.getElementById('love-message');
+  const audioElement = document.getElementById('audio');
+  let interval;
+
+  function changeMessage() {
+    loveMessageElement.textContent = messages[index];
+    index++;
+    if (index >= messages.length) {
+      clearInterval(interval);  // Detener la animación cuando termine el audio
+    }
+  }
+
+  audioElement.addEventListener('play', function() {
+    interval = setInterval(changeMessage, 6000);  // Cambiar mensaje cada 6 segundos
+  });
+</script>
